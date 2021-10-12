@@ -1,4 +1,5 @@
 <template>
+    
     <div class="card-container">
         <div class="card-top">
             <img :src="image"/>
@@ -37,15 +38,18 @@
 <script>
     import image from '../assets/astronaut.svg'
     
+    
     export default {
         data(){
             return{
                 image,
                 askFrequent: "Perguntas frequentes",
-                show:true
+                show:true,
+                
 
             }
-        }
+        },
+        
     }
 </script>
 

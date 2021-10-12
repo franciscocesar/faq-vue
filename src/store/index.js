@@ -1,34 +1,44 @@
-import { createStore } from "vuex";
-//Apenas mutation altera o estado
-export default createStore({
-  state: {
-    todos: []
-  },
-  mutations: {
-    SET_TODOS(state, todos){
-      state.todos = todos
-    } //PEgando os dados da API
-  },
-  actions: {
-    fetchTodos(context){
-      const todos = [
-        { id: 1, text: 'Estudar HTML & CSS', done: true },
-        { id: 2, text: 'Conceitos Vuex', done: true },
-        { id: 3, text: 'Atomic Design', done: false },
-        { id: 4, text: 'Começar com Nuxt', done: false },
-        { id: 5, text: 'Back-end com Adonis', done: false }
-      ]
+import {createStore} from 'vuex';
+import { faqCategories } from './db.json'
 
-      context.commit('SET_TODOS', todos)
+export default createStore({
+  state:{
+    faq: []
+  },
+  mutations:{
+    SET_FAQ(state, faq){
+      state.faq = faq
+    }
+  },
+  actions:{
+    fetchFaq(context){
+      const faq = JSON.parse(JSON.stringify(faqCategories))
       
+      
+      context.commit('SET_FAQ', faq)
     }
   },
   getters:{
-    $allTodos(state){
-      return state.todos
+    $allFaq(state) {
+       return state.faq
     },
-    $doneTodos(state){
-      return state.todos.filter((todo) => todo.done)
-    }
+    $basecampFaq(state) {
+      const valueID = state.faq.filter((faq) => faq.id == 1)
+      return valueID
+    },
+   $basecampFaqTwo(state) {
+      const valueID = state.faq.filter((faq) => faq.id == 2)
+      return valueID
+ 
+    },
+    $basecampFaqThree(state) {
+      const valueID = state.faq.filter((faq) => faq.id == 3)
+      return valueID
+  },
+    $basecampFaqFour(state) {
+      const valueID = state.faq.filter((faq) => faq.id == 4)
+      return valueID
+  },
+
   }
-});
+})

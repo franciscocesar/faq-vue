@@ -1,11 +1,15 @@
 <template>
-   <Card></Card>
+   <CardTwo />
+   
+   
+
 </template>
 
 <script>
-    import Card from './Card.vue'
+    // import Card from './Card.vue'
+    import CardTwo from './CardTwo.vue'
     export default {
-        components:{ Card}
+        components:{ CardTwo }
     }
 </script>
 
