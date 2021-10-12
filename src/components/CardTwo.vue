@@ -4,7 +4,7 @@
     <div class="card-container">
         <div class="card-top">
             <div class="card-header">
-                <img src="https://ucef3692e7f40cacfa2799070e39.previews.dropboxusercontent.com/p/orig/ABX_agg07CqnU-wUSOSXJrQ9wB8pQ1EWMrxKmtRhvCgIrKRoNf1BlUhaQKhq7WC_XEXhW6VqfzE38tWbYOMMqEad1V12AR6VsUfyytTT-x-uRxnBWQD8Q50gscNJQg8z8PXpCg4bQILXAst0rE7PHyg09AJurhhV-GemfblxRmwng1pG7snOffG4_UJN_J573sHZq2G3BbpiiH6j1BSstTXANkBfh6fNMEQHN5hRj_vMIWXbyCQsxnJ2Nrq2zlfv_cQHt6xCbA81Qz_aZNDPh_qmni_3Na75HJrrhD5TAIuYqLmyPsvN7w_Oxx0AjC0w7n_qAQUXRmsSmAHFzWRMQPf0TX6OYRoO3scc3IBQ7l0RJQ/p.svg?fv_content=true&size_mode=5" alt="" class="icon-ar">
+                <a href=""><img src="https://ucef3692e7f40cacfa2799070e39.previews.dropboxusercontent.com/p/orig/ABX_agg07CqnU-wUSOSXJrQ9wB8pQ1EWMrxKmtRhvCgIrKRoNf1BlUhaQKhq7WC_XEXhW6VqfzE38tWbYOMMqEad1V12AR6VsUfyytTT-x-uRxnBWQD8Q50gscNJQg8z8PXpCg4bQILXAst0rE7PHyg09AJurhhV-GemfblxRmwng1pG7snOffG4_UJN_J573sHZq2G3BbpiiH6j1BSstTXANkBfh6fNMEQHN5hRj_vMIWXbyCQsxnJ2Nrq2zlfv_cQHt6xCbA81Qz_aZNDPh_qmni_3Na75HJrrhD5TAIuYqLmyPsvN7w_Oxx0AjC0w7n_qAQUXRmsSmAHFzWRMQPf0TX6OYRoO3scc3IBQ7l0RJQ/p.svg?fv_content=true&size_mode=5" alt="" class="icon-ar"></a>
                 <h1 class="card-title">Basecamp </h1>
                 <img src="https://uc23628f575d60158bc15bb8a2cc.previews.dropboxusercontent.com/p/orig/ABX8AmpliuXBWg4CEiUXr7_bBICSf9Jul_ljqOiTWCFyljTFDN4N-hKLyu0IhSdBBwe2qkoiclJn2kJ2tjcTmQXm6Tg9q8m9X4eYwhj9AKk_E59ZnRAGlbB6WOpjzvfDOOwKUYGRFy317gs2wE_2k8iigX3aqe0OLcg9tX14Zk4wvc43DIUs1LucfvLL6m0PjD7AeDIB3xG_NZ50v448w8F4qJbJdlTH6CtZZtv_AdrqRoTwuSlqPa8izsCtapmNcSlNBInDHDwlrlc169Xt6vwEQ-SqoTXazg0L9xYajtXF3sV7rpclsNUyhMXxkIduSyRaEYQfycyVlA8w_n1HOcI-Woa-XSsomj8Red6IgFXuOQ/p.svg?fv_content=true&size_mode=5" class="icon-fog">
                 <p class="card-par">Selecione uma pergunta</p>
@@ -54,28 +54,20 @@
 <script>
     
     export default {
+        data(){
+            return{
+                show:false
+            }
+        },
         created(){
             this.$store.dispatch('fetchFaq')
         },
         computed: {
-            $allFaq(){
-                return this.$store.getters.$allFaq
-            },
             $basecampFaq(){
                 return this.$store.getters.$basecampFaq
             },
-             $basecampFaqTwo(){
-                return this.$store.getters.$basecampFaqTwo
-            },
-             $basecampFaqThree(){
-                return this.$store.getters.$$basecampFaqThree
-            },
-             $basecampFaqFour(){
-                return this.$store.getters.$basecampFaqFour
-            },
-            
-            
-        }
+                                  
+        },
     }
 </script>
 

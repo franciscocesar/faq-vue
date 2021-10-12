@@ -1,5 +1,6 @@
 <template>
-   <CardTwo />
+    <Card />
+   
    
    
 
@@ -7,9 +8,10 @@
 
 <script>
     // import Card from './Card.vue'
-    import CardTwo from './CardTwo.vue'
+    import Card from './Card.vue'
+    
     export default {
-        components:{ CardTwo }
+        components:{ Card }
     }
 </script>
 

@@ -1,6 +1,6 @@
 <template>
     
-    <div class="card-container">
+    <div class="card-container" id="card">
         <div class="card-top">
             <img :src="image"/>
             <h1 class="card-title"> {{ askFrequent}}</h1>
@@ -13,7 +13,8 @@
         <div class="card-list">
             <ul>
                 <li class="icon-1">
-                    <img src="https://uca04c57742184ff7affb0a0cf64.previews.dropboxusercontent.com/p/orig/ABWGs3p2gSb-Z8iPk-WrjbeO6IQn3hiNPLDm7pX37KVhPHCRlxfHN_CCP1aZEhuo0CrYFQthfEOSj1DyktfaWFFDucRFbxWXUFG0zh1VUOq1GyapOJnbpVjNS4churbCwBvq29lPgs4Y9bQQ-qCsoRv_xQNzd-_joiC-_lbdDInnDAHMzSlxkahoUAlPlj7xeEd5YLfv2hfhb5wfoC0rDluB76ZcPODty1r95BQZgiWmWA04_1XCFHU7q3JW5Kx-jtrZystRBH9za4cxNcqx5ABx4jeyvT9Gs6QAdvzZeErvABjYcrqjejUG2wrEHvjkcjb9ImU36t_wSJBhc1faNEwRBtBnaY_7wpcw76Ns8xwjNA/p.svg?fv_content=true&size_mode=5" alt="" srcset=""><a>Basecamp</a>  
+                    <img src="https://uca04c57742184ff7affb0a0cf64.previews.dropboxusercontent.com/p/orig/ABWGs3p2gSb-Z8iPk-WrjbeO6IQn3hiNPLDm7pX37KVhPHCRlxfHN_CCP1aZEhuo0CrYFQthfEOSj1DyktfaWFFDucRFbxWXUFG0zh1VUOq1GyapOJnbpVjNS4churbCwBvq29lPgs4Y9bQQ-qCsoRv_xQNzd-_joiC-_lbdDInnDAHMzSlxkahoUAlPlj7xeEd5YLfv2hfhb5wfoC0rDluB76ZcPODty1r95BQZgiWmWA04_1XCFHU7q3JW5Kx-jtrZystRBH9za4cxNcqx5ABx4jeyvT9Gs6QAdvzZeErvABjYcrqjejUG2wrEHvjkcjb9ImU36t_wSJBhc1faNEwRBtBnaY_7wpcw76Ns8xwjNA/p.svg?fv_content=true&size_mode=5" alt="" srcset="">
+                    <a @click="show = !show">Basecamp</a>  
                 </li>
             </ul>
              <ul>
@@ -33,10 +34,19 @@
             </ul>
         </div>
     </div>
+    <transition-group name = "fade" enter-active-class="animate__animated animate__backInRight" leave-active-class="animated__animated animate__backInRight">
+        <CardTwo v-if="show"/>
+        
+    </transition-group>
+ 
+
 </template>
 
 <script>
     import image from '../assets/astronaut.svg'
+    import CardTwo from './CardTwo.vue'
+    
+    
     
     
     export default {
@@ -44,11 +54,12 @@
             return{
                 image,
                 askFrequent: "Perguntas frequentes",
-                show:true,
+                show:false,
                 
 
             }
         },
+        components:{CardTwo}
         
     }
 </script>
