@@ -1,4 +1,4 @@
-# Projeto de FAQ para estudo de transition em VueJS e Vuex(Em Desenvolvimento)
+# Projeto de FAQ para estudo de transition em VueJS e Vuex(Em Desenvolvimento -)
 
 ![alt text](https://i.imgur.com/ZHEcnmt.png)
 
